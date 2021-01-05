@@ -3,9 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/app.js" type="module"></script>
     <title>The Shoppies</title>
   </head>
-  <body></body>
+  <body>
+    <div class="headerWrapper">
+      <h1 class="logo">The Shoppies</h1>
+
+      <div class="header">
+        <p>
+          Please search using the movie's title that you'd like to add to you
+          <span>Nomination List.</span> You may nominate a maximum of five
+          movies.
+        </p>
+        <img src="./resources/header_pic.png" alt="header image" />
+      </div>
+    </div>
+
+    <div class="searchWrapper">
+      <div class="errorMessage"></div>
+      <div class="searchArea">
+        <input
+          type="text"
+          class="search"
+          id="search"
+          placeholder="Search"
+          autocomplete="off"
+        />
+        <div class="searchBtn" id="searchBtn">
+          <p><i class="fas fa-search" id="searchBtnIcon"></i></p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

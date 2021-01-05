@@ -1,12 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&family=Roboto:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Roboto:wght@300;500&display=swap');
+:root {
+  --heading-font: 'Itim', cursive;
+  --primary-background: #59c3c3;
+  --secondary-background: #52489c;
+  --primary-color: #ebebeb;
+  --secondary-color: #cad2c5;
+}
 * {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  /* 
-    font to be used for headings
-    font-family: 'Itim', cursive; 
-    */
+}
+body {
+  /* background: var(--primary-background); */
+  background: #3494e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #3494e6,
+    #ec6ead
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #3494e6,
+    #ec6ead
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: var(--primary-color);
+}
+.logo {
+  font-family: var(--heading-font);
+  letter-spacing: -3px;
+  margin: 30px;
+  font-size: 4em;
+  /* color: var(--primary-color); */
+}
+.header {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.header p {
+  font-size: 1.9em;
+  margin-left: 35px;
+  font-weight: 500;
+  max-width: 900px;
+}
+.header img {
+  height: 300px;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 40px;
+  margin-right: 120px;
+}
+.searchArea {
+  position: relative;
+  width: 30%;
+  height: 50px;
+  margin: 50px auto 0;
+}
+
+.searchArea input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 15px;
+  padding-right: 75px;
+  background: transparent;
+}
+input:focus {
+  outline: none;
+}
+
+.searchArea .searchBtn {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 8px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  border: none;
+  transition: 0.5s;
+  /* border-left: 0.5px solid black; */
+}
+.searchBtn:hover {
+  transform: translateY(-5px);
+}
+.fa-search {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
 }
