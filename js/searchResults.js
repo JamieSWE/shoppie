@@ -1,4 +1,5 @@
 export const updateSearchResults = (data) => {
+  const searchResults = document.getElementById('searchResults');
   clearSearchResults();
   if (data.Search) {
     const searchResults = document.getElementById('searchResults');
@@ -7,7 +8,7 @@ export const updateSearchResults = (data) => {
       let button = document.createElement('button');
       let linebreak = document.createElement('br');
       let div = document.createElement('div');
-      div.innerHTML = `${data.Search[i].Title}, ${data.Search[i].Year}`;
+      div.innerHTML = `${data.Search[i].Title} <em>(${data.Search[i].Year})</em>`;
       //li.innerHTML = `${data.Search[i].Title}, ${data.Search[i].Year}`;
       button.appendChild(document.createTextNode('Nominate'));
       button.setAttribute(
@@ -27,6 +28,8 @@ export const updateSearchResults = (data) => {
       li.appendChild(button);
       searchResults.appendChild(li);
     }
+
+    searchResults.style.display = 'block';
   }
 };
 
