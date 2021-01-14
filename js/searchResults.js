@@ -1,8 +1,13 @@
-import { nominateMovie } from './nominate.js';
+import {
+  nominateMovie,
+  numOfNominations,
+  disableNominationBtns,
+} from './nominate.js';
 
 export const updateSearchResults = (data) => {
   const searchResults = document.getElementById('searchResults');
   clearSearchResults();
+
   if (data.Search) {
     const searchResults = document.getElementById('searchResults');
     for (let i = 0; i < data.Search.length; i++) {
@@ -24,6 +29,9 @@ export const updateSearchResults = (data) => {
       li.appendChild(div);
       li.appendChild(button);
       searchResults.appendChild(li);
+    }
+    if (numOfNominations() == 5) {
+      disableNominationBtns();
     }
 
     searchResults.style.display = 'block';

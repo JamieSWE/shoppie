@@ -1,7 +1,9 @@
-import { addMovie } from './database.js';
+import { addMovie, removeMovie } from './database.js';
+import { refreshNominationResults } from './nominationResults.js';
 //N / A;
 
 export function nominateMovie() {
+  const searchResults = document.getElementById('searchResults');
   this.disabled = true;
   this.innerHTML = 'Nominated';
   //   let img =
@@ -19,9 +21,37 @@ export function nominateMovie() {
     this.getAttribute('data-year'),
     this.getAttribute('data-img')
   );
+  //searchResults.style.display = 'block';
+  refreshNominationResults();
+
+  if (numOfNominations() == 5) {
+    disableNominationBtns();
+  }
+
   console.log(localStorage);
 }
 
-export const disableNominationBtns = () => {};
-export const enableNominationBtns = () => {};
+export function deleteNomination() {
+  removeMovie(this.getAttribute('data-title'));
+  refreshNominationResults();
+}
+
+export const disableNominationBtns = () => {
+  let btns = document.querySelectorAll('#searchResults button');
+  btns.forEach((button) => {
+    button.disabled = true;
+  });
+};
+
+export const enableNominationBtns = () => {
+  let btns = document.querySelectorAll('#searchResults button');
+  btns.forEach((button) => {
+    button.disabled = false;
+  });
+};
+
+export const numOfNominations = () => {
+  return JSON.parse(localStorage.getItem('count'));
+};
+
 export function wasPrevNominated() {}
