@@ -25,10 +25,14 @@ search.addEventListener('focusin', () => {
     searchResults.style.display = 'none';
   }
 });
-search.addEventListener('focusout', () => {
-  clearSearchBtn.style.display = 'none';
-  searchResults.style.display = 'none';
+searchResults.addEventListener('focusin', () => {
+  clearSearchBtn.style.display = 'block';
+  searchResults.style.display = 'block';
 });
+// search.addEventListener('focusout', () => {
+//   clearSearchBtn.style.display = 'none';
+//   searchResults.style.display = 'none';
+// });
 search.addEventListener('input', () => {
   if (search.value.trim() === '') {
     clearSearchBtn.style.display = 'none';
@@ -36,6 +40,9 @@ search.addEventListener('input', () => {
     clearSearchBtn.style.display = 'block';
   }
 });
+// searchResults.addEventListener('focusin', () => {
+//   searchResults.style.display = 'block';
+// });
 
 searchBtn.addEventListener('click', submitSearch);
 

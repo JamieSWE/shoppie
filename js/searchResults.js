@@ -1,3 +1,5 @@
+import { nominateMovie } from './nominate.js';
+
 export const updateSearchResults = (data) => {
   const searchResults = document.getElementById('searchResults');
   clearSearchResults();
@@ -11,17 +13,12 @@ export const updateSearchResults = (data) => {
       div.innerHTML = `${data.Search[i].Title} <em>(${data.Search[i].Year})</em>`;
       //li.innerHTML = `${data.Search[i].Title}, ${data.Search[i].Year}`;
       button.appendChild(document.createTextNode('Nominate'));
-      button.setAttribute(
-        'data-title',
-        data.Search[i].Title,
-        'data-year',
-        data.Search[i].Year,
-        'data-img',
-        data.Search[i].Poster
-      );
+      button.setAttribute('data-title', data.Search[i].Title);
+      button.setAttribute('data-year', data.Search[i].Year);
+      button.setAttribute('data-img', data.Search[i].Poster);
       button.classList.add('nominateBtn');
       //create func in nominate.js
-      //button.addEventListener('click', nominateMovie);
+      button.addEventListener('click', nominateMovie);
       // li.appendChild(linebreak);
       div.classList.add('liText');
       li.appendChild(div);
