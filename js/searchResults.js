@@ -6,7 +6,7 @@ import {
 } from './nominate.js';
 
 export const updateSearchResults = (data) => {
-  const searchResults = document.getElementById('searchResults');
+  //const searchResults = document.getElementById('searchResults');
   clearSearchResults();
 
   if (data.Search) {
@@ -14,7 +14,7 @@ export const updateSearchResults = (data) => {
     for (let i = 0; i < data.Search.length; i++) {
       let li = document.createElement('li');
       let button = document.createElement('button');
-      let linebreak = document.createElement('br');
+      //let linebreak = document.createElement('br');
       let div = document.createElement('div');
       div.innerHTML = `${data.Search[i].Title} <em>(${data.Search[i].Year})</em>`;
       //li.innerHTML = `${data.Search[i].Title}, ${data.Search[i].Year}`;
@@ -29,6 +29,8 @@ export const updateSearchResults = (data) => {
         button.appendChild(document.createTextNode('Nominate'));
         button.classList.add('nominateBtn');
       }
+      // button.appendChild(document.createTextNode('Nominate'));
+      // button.classList.add('nominateBtn');
 
       //create func in nominate.js
       button.addEventListener('click', nominateMovie);

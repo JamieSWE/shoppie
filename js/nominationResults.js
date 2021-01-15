@@ -27,6 +27,8 @@ export const refreshNominationResults = () => {
       cardOutline.appendChild(img);
       cardOutline.appendChild(movieTitle);
       cardOutline.appendChild(releaseYear);
+      // cardOutline.classList.add('createCard');
+      // // setTimeout(() => {}, 1000);
 
       nominationResults.appendChild(cardOutline);
     }

@@ -73,10 +73,12 @@ export const isNominated = (movieTitle) => {
   let nominatedMovies = data.filter((movie) => {
     return movie.Title !== '';
   });
-  for (let i = 0; i < nominatedMovies.length; i++) {
-    if (nominatedMovies[i].Title === movieTitle) {
-      isNominated = true;
-      break;
+  if (nominatedMovies.length !== 0) {
+    for (let i = 0; i < nominatedMovies.length; i++) {
+      if (nominatedMovies[i].Title === movieTitle) {
+        isNominated = true;
+        break;
+      }
     }
   }
   return isNominated;
