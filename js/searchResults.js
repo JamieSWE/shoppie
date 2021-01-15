@@ -2,6 +2,7 @@ import {
   nominateMovie,
   numOfNominations,
   disableNominationBtns,
+  isNominated,
 } from './nominate.js';
 
 export const updateSearchResults = (data) => {
@@ -17,11 +18,18 @@ export const updateSearchResults = (data) => {
       let div = document.createElement('div');
       div.innerHTML = `${data.Search[i].Title} <em>(${data.Search[i].Year})</em>`;
       //li.innerHTML = `${data.Search[i].Title}, ${data.Search[i].Year}`;
-      button.appendChild(document.createTextNode('Nominate'));
+      //button.appendChild(document.createTextNode('Nominate'));
       button.setAttribute('data-title', data.Search[i].Title);
       button.setAttribute('data-year', data.Search[i].Year);
       button.setAttribute('data-img', data.Search[i].Poster);
-      button.classList.add('nominateBtn');
+      if (isNominated(data.Search[i].Title)) {
+        button.appendChild(document.createTextNode('Nominated'));
+        button.classList.add('isNominated');
+      } else {
+        button.appendChild(document.createTextNode('Nominate'));
+        button.classList.add('nominateBtn');
+      }
+
       //create func in nominate.js
       button.addEventListener('click', nominateMovie);
       // li.appendChild(linebreak);

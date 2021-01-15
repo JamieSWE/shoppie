@@ -150,10 +150,25 @@ input:focus {
 .liText {
   width: 70%;
 }
-
+.isNominated {
+  cursor: not-allowed;
+  pointer-events: none;
+  background: lightgrey;
+  /* content: 'Nominated'; */
+  float: right;
+  border-radius: 10px;
+  border: none;
+  width: 100px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
 .nominateBtn {
   background: gold;
   float: right;
+  /* content: 'Nominate'; */
+
   border-radius: 10px;
   border: none;
   width: 100px;
@@ -184,10 +199,12 @@ input:focus {
   width: 30%;
   margin: 10px auto;
 }
+
 li {
   /* margin: auto;
-  border-bottom: 1px dotted black;
+ 
   padding: 10px; */
+  border-bottom: 1px dotted black;
   /* background-color: #fff; */
   border-radius: 3px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
@@ -198,14 +215,16 @@ li {
   width: 100%;
   padding: 15px 10px;
   margin: 10px 0;
+  z-index: 100;
 
   /* word-wrap: break-word;
   white-space: normal; */
 }
 ul {
+  background: rgba(0, 0, 0, 0.5);
   margin: auto;
   position: absolute;
-  background: black;
+  /* background: black; */
   /* filter: blur(8px); 
   opacity: 0.5;*/
   height: 225px;
@@ -217,6 +236,7 @@ ul {
   /* overflow: -moz-scrollbars-none;
   -ms-overflow-style: none; */
   overflow-y: scroll;
+  z-index: 100;
 }
 ul::-webkit-scrollbar {
   /* width: 0 !important;
@@ -241,6 +261,11 @@ ul::-webkit-scrollbar-thumb {
   /* background: silver; */
   /* filter: brightness(90%); */
   background: rgba(0, 0, 0, 0.2);
+  transition: 0.25s;
+  z-index: 1;
+}
+.card:hover {
+  transform: translateY(-20px);
 }
 
 .card button {

@@ -6,6 +6,7 @@ export function nominateMovie() {
   const searchResults = document.getElementById('searchResults');
   this.disabled = true;
   this.innerHTML = 'Nominated';
+
   //   let img =
   //     this.getAttribute('data-img') === 'N/A'
   //       ? './resources/poster_placeholder.jpg'
@@ -34,6 +35,7 @@ export function nominateMovie() {
 export function deleteNomination() {
   removeMovie(this.getAttribute('data-title'));
   refreshNominationResults();
+  enableNominationBtns();
 }
 
 export const disableNominationBtns = () => {
@@ -46,7 +48,14 @@ export const disableNominationBtns = () => {
 export const enableNominationBtns = () => {
   let btns = document.querySelectorAll('#searchResults button');
   btns.forEach((button) => {
-    button.disabled = false;
+    if (!isNominated(button.getAttribute('data-title'))) {
+      button.removeChild(button.firstChild);
+      button.appendChild(document.createTextNode('Nominate'));
+      button.classList.add('nominateBtn');
+      button.disabled = false;
+    }
+
+    // button.classList.add
   });
 };
 
@@ -54,4 +63,17 @@ export const numOfNominations = () => {
   return JSON.parse(localStorage.getItem('count'));
 };
 
-export function wasPrevNominated() {}
+export const isNominated = (movieTitle) => {
+  let isNominated = false;
+  let data = JSON.parse(localStorage.getItem('movies'));
+  let nominatedMovies = data.filter((movie) => {
+    return movie.Title !== '';
+  });
+  for (let i = 0; i < nominatedMovies.length; i++) {
+    if (nominatedMovies[i].Title === movieTitle) {
+      isNominated = true;
+      break;
+    }
+  }
+  return isNominated;
+};

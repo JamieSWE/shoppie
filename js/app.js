@@ -26,6 +26,12 @@ search.addEventListener('input', () => {
     clearSearchBtn.style.display = 'block';
   }
 });
+
+clearSearchBtn.addEventListener('click', () => {
+  search.value = '';
+  search.focus();
+  clearSearchResults();
+});
 // search.addEventListener('focusin', () => {
 //   if (search.value.trim() === '') {
 //     clearSearchBtn.style.display = 'none';
@@ -64,13 +70,19 @@ search.addEventListener('input', () => {
 // });
 document.onclick = (e) => {
   if (e.target.id !== 'searchArea' || e.target.id !== 'resultsArea') {
-    if (e.target.classList.contains('nominateBtn')) {
-      searchResults.style.display = 'block';
-      clearSearchBtn.style.display = 'block';
-    } else {
-      searchResults.style.display = 'none';
-      clearSearchBtn.style.display = 'none';
-    }
+    // if (e.target.classList.contains('nominateBtn')) {
+    //   searchResults.style.display = 'block';
+    //   clearSearchBtn.style.display = 'block';
+    // } else {
+    //   searchResults.style.display = 'none';
+    //   clearSearchBtn.style.display = 'none';
+    // }
+    searchResults.style.display = 'none';
+    clearSearchBtn.style.display = 'none';
+  }
+  if (e.target.classList.contains('nominateBtn')) {
+    searchResults.style.display = 'block';
+    clearSearchBtn.style.display = 'block';
   }
   // if (e.target.querySelector('.nominateBtn')) {
   //   searchResults.style.display = 'block';
