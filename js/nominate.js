@@ -3,7 +3,8 @@ import { refreshNominationResults } from './nominationResults.js';
 //N / A;
 
 export function nominateMovie() {
-  const searchResults = document.getElementById('searchResults');
+  //const searchResults = document.getElementById('searchResults');
+  const messageBanner = document.getElementById('messageBanner');
   this.disabled = true;
   this.innerHTML = 'Nominated';
 
@@ -27,6 +28,9 @@ export function nominateMovie() {
 
   if (numOfNominations() == 5) {
     disableNominationBtns();
+    messageBanner.className = '';
+    messageBanner.classList.add('success');
+    messageBanner.innerHTML = `<i class="far fa-check-circle"></i> You have nominated five movies. If you'd like to nominate another movie, please remove one of your previously nominated movies.`;
   }
 
   console.log(localStorage);

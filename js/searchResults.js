@@ -43,6 +43,8 @@ export const updateSearchResults = (data) => {
     }
 
     searchResults.style.display = 'block';
+  } else {
+    //throw movie not found error
   }
 };
 

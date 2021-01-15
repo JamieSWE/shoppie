@@ -23,17 +23,18 @@
       <h1 class="logo">The Shoppies</h1>
 
       <div class="header">
-        <p>
-          Please search using the movie's title that you'd like to add to you
-          <span>Nomination List.</span> You may nominate a maximum of five
-          movies.
-        </p>
+        <p>Please search and nominate a maximum of five movies.</p>
         <!-- <img src="./resources/header_pic.png" alt="header image" /> -->
       </div>
     </div>
 
     <div class="searchWrapper" id="searchArea">
-      <div class="errorMessage"></div>
+      <!-- <div class="messageBanner"></div> -->
+      <span id="messageBanner"
+        >Movie not found. Please try using a different title.</span
+      >
+      <!-- success message icon - <i class="far fa-check-circle"></i>
+      error message icon - <i class="far fa-times-circle"></i> -->
       <div class="searchArea">
         <input
           type="text"
