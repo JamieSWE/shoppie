@@ -4,7 +4,7 @@
 
 ##### This small application was developed to be a part of my application for **Shopify's Frontend Internship - Summer 2021**.
 
-![Image of website](https://github.com/DevJam876/shoppie/blob/mobile-responsive/resources/Shoppie_Screenshot.PNG)
+![Image of website](https://github.com/DevJam876/shoppie/blob/main/resources/Shoppie_Screenshot.PNG)
 
 [Live Demo](https://epic-boyd-6cbf81.netlify.app/)
 
