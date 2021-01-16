@@ -4,7 +4,7 @@ import {
   disableNominationBtns,
   isNominated,
 } from './nominate.js';
-
+import { maxNominationSelected, errorHandling } from './message.js';
 export const updateSearchResults = (data) => {
   //const searchResults = document.getElementById('searchResults');
   clearSearchResults();
@@ -42,11 +42,12 @@ export const updateSearchResults = (data) => {
     }
     if (numOfNominations() == 5) {
       disableNominationBtns();
+      maxNominationSelected();
     }
 
     searchResults.style.display = 'block';
   } else {
-    //throw movie not found error
+    errorHandling(data);
   }
 };
 

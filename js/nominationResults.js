@@ -1,7 +1,7 @@
 // export const appendNominationResults = () => {};
 // export const truncateNominationResults = () => {};
 import { deleteNomination } from './nominate.js';
-export const refreshNominationResults = () => {
+export const refreshNominationResults = (newNomination) => {
   if (localStorage.length >= 1) {
     clearNominationResults();
     let data = JSON.parse(localStorage.getItem('movies'));
@@ -27,10 +27,12 @@ export const refreshNominationResults = () => {
       cardOutline.appendChild(img);
       cardOutline.appendChild(movieTitle);
       cardOutline.appendChild(releaseYear);
-      // cardOutline.classList.add('createCard');
-      // // setTimeout(() => {}, 1000);
+      if (newNomination === 'yes' && i === movies.length - 1)
+        cardOutline.classList.add('createCard');
 
       nominationResults.appendChild(cardOutline);
+      // delay(2000);
+      // setTimeout(() => {}, 5000);
     }
   }
 };

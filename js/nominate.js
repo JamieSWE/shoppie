@@ -1,5 +1,6 @@
 import { addMovie, removeMovie } from './database.js';
 import { refreshNominationResults } from './nominationResults.js';
+import { maxNominationSelected, nominationRemoved } from './message.js';
 //N / A;
 
 export function nominateMovie() {
@@ -24,13 +25,11 @@ export function nominateMovie() {
     this.getAttribute('data-img')
   );
   //searchResults.style.display = 'block';
-  refreshNominationResults();
+  refreshNominationResults('yes');
 
   if (numOfNominations() == 5) {
     disableNominationBtns();
-    messageBanner.className = '';
-    messageBanner.classList.add('success');
-    messageBanner.innerHTML = `<i class="far fa-check-circle"></i> You have nominated five movies. If you'd like to nominate another movie, please remove one of your previously nominated movies.`;
+    maxNominationSelected();
   }
 
   console.log(localStorage);
@@ -40,8 +39,8 @@ export function deleteNomination() {
   removeMovie(this.getAttribute('data-title'));
   refreshNominationResults();
   enableNominationBtns();
+  nominationRemoved();
 }
-
 export const disableNominationBtns = () => {
   let btns = document.querySelectorAll('#searchResults button');
   btns.forEach((button) => {

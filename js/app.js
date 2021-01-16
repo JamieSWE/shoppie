@@ -1,6 +1,8 @@
 import { submitSearch } from './search.js';
 import { refreshNominationResults } from './nominationResults.js';
 import { clearSearchResults } from './searchResults.js';
+import { numOfNominations } from './nominate.js';
+import { maxNominationSelected } from './message.js';
 
 const search = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
@@ -11,6 +13,12 @@ const nominationBtns = document.querySelectorAll('#searchResults button');
 //initialized methods, place in a function
 clearSearchBtn.style.display = 'none';
 searchResults.style.display = 'none';
+if (numOfNominations() === 5) {
+  maxNominationSelected();
+  // messageBanner.className = '';
+  // messageBanner.classList.add('success');
+  // messageBanner.innerHTML = `<i class="fas fa-check-circle"></i> You have nominated five movies. If you'd like to nominate another movie, please remove one of your previously nominated movies.`;
+}
 // searchResults.classList.toggle('display');
 refreshNominationResults();
 
