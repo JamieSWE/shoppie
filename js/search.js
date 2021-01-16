@@ -1,18 +1,14 @@
 import { API_KEY, WEB_URI, API_FILTER } from './api.js';
 import { updateSearchResults } from './searchResults.js';
-import { errorHandling, networkError } from './message.js';
+import { networkError } from './message.js';
 
 export const submitSearch = async () => {
   const url = WEB_URI + API_KEY + '&s=' + sanitizeSearchInput() + API_FILTER;
   try {
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
     updateSearchResults(data);
-    // if (!data.response) errorHandling(data);
-    // else
   } catch (error) {
-    console.error(error);
     networkError();
   }
 };

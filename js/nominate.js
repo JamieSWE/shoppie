@@ -1,38 +1,23 @@
 import { addMovie, removeMovie } from './database.js';
 import { refreshNominationResults } from './nominationResults.js';
 import { maxNominationSelected, nominationRemoved } from './message.js';
-//N / A;
 
 export function nominateMovie() {
-  //const searchResults = document.getElementById('searchResults');
   const messageBanner = document.getElementById('messageBanner');
   this.disabled = true;
   this.innerHTML = 'Nominated';
-
-  //   let img =
-  //     this.getAttribute('data-img') === 'N/A'
-  //       ? './resources/poster_placeholder.jpg'
-  //       : this.getAttribute('data-img');
-  //   //(this.getAttribute("data-img")=== "N/A") ?let img = "./resourses/poster_placeholder.jpg":let img =this.getAttribute("data-img")
-  //   let movie = {
-  //     Title: this.getAttribute('data-title'),
-  //     Year: this.getAttribute('data-year'),
-  //     Poster: img,
-  //   };
   addMovie(
     this.getAttribute('data-title'),
     this.getAttribute('data-year'),
     this.getAttribute('data-img')
   );
-  //searchResults.style.display = 'block';
+
   refreshNominationResults('yes');
 
   if (numOfNominations() == 5) {
     disableNominationBtns();
     maxNominationSelected();
   }
-
-  console.log(localStorage);
 }
 
 export function deleteNomination() {
@@ -57,8 +42,6 @@ export const enableNominationBtns = () => {
       button.classList.add('nominateBtn');
       button.disabled = false;
     }
-
-    // button.classList.add
   });
 };
 
@@ -80,14 +63,5 @@ export const isNominated = (movieTitle) => {
       }
     }
   }
-
-  // if (nominatedMovies.length !== 0) {
-  //   for (let i = 0; i < nominatedMovies.length; i++) {
-  //     if (nominatedMovies[i].Title === movieTitle) {
-  //       isNominated = true;
-  //       break;
-  //     }
-  //   }
-  // }
   return isNominated;
 };
