@@ -65,6 +65,8 @@ body {
   font-weight: 500;
   width: 65%;
 }
+/* position: absolute;
+
 .header img {
   height: 200px;
   transform: rotate(25deg);
@@ -72,12 +74,12 @@ body {
   align-items: center;
   margin-right: 40px;
   margin-top: -40px;
-  /* position: absolute;
   right: 0;
   top: 0;
   margin-top: 40px;
-  margin-right: 120px; */
+  margin-right: 120px; 
 }
+*/
 
 #messageBanner {
   /* background: white;
@@ -89,7 +91,7 @@ body {
   margin-left: 30px;
   margin-top: 10px;
   border-radius: 15px;
-  padding: 5px;
+  padding: 10px;
   font-weight: bold;
 }
 .error {
@@ -154,7 +156,7 @@ input:focus {
   cursor: pointer;
   z-index: 2;
   border: none;
-  border-right: 1px dashed black;
+  border-right: 1px dashed var(--primary-color);
   padding-right: 25px;
   transition: 0.5s;
   color: red;
@@ -196,6 +198,7 @@ input:focus {
 
 .liText {
   width: 70%;
+  padding-right: 5px;
 }
 .isNominated {
   cursor: not-allowed;
@@ -300,6 +303,7 @@ ul::-webkit-scrollbar-thumb {
   width: 95%;
   margin: 20px auto 10px auto;
   display: flex;
+  flex-wrap: wrap;
   /* transition: 0.9s; */
 
   /* align-items: center; */
@@ -309,7 +313,7 @@ ul::-webkit-scrollbar-thumb {
 .card {
   width: 15%;
   height: 250px;
-  margin: 0 20px;
+  margin: 0 20px 20px 15px;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.6); /* this adds the "card" effect */
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); this adds the "card" effect */
   border-radius: 15px;
@@ -334,6 +338,8 @@ ul::-webkit-scrollbar-thumb {
   border: none;
   width: 100%;
   transition: 0.3s;
+  justify-content: center;
+  align-items: flex-end;
   /* margin-top: 5px; */
   /* margin-left: 15px; */
   background: red;
@@ -413,4 +419,39 @@ ul::-webkit-scrollbar-thumb {
   to {
     opacity: 1;
   }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 3em;
+  }
+
+  .header p {
+    font-size: 1.2em;
+  }
+  .searchArea {
+    width: 40%;
+  }
+
+  .nominationWrapper h2 {
+    font-size: 1.75em;
+  }
+
+  .resultsWrapper {
+    width: 40%;
+  }
+  ul {
+    width: 40%;
+  }
+  .nominationRow {
+    width: 90%;
+  }
+  .card {
+    width: 25%;
+  }
+  .card button {
+    height: 35px;
+  }
+}
+@media (max-width: 480px) {
 }
