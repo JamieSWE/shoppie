@@ -261,7 +261,7 @@ li {
   align-items: center;
   width: 100%;
   padding: 15px 10px;
-  margin: 10px 0;
+  margin: 5px 0;
   z-index: 100;
 
   /* word-wrap: break-word;
@@ -275,7 +275,7 @@ ul {
   /* filter: blur(8px); 
   opacity: 0.5;*/
   height: 225px;
-  width: 410px;
+  width: 30%;
   list-style: none;
   /* margin-top: 5px; */
   padding: 0;
