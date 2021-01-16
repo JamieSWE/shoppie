@@ -36,7 +36,7 @@ export const errorHandling = (error) => {
   }, 3500);
 };
 
-//handles network error throw by JS Fetch API
+//handles network error if thrown by JS Fetch API
 export const networkError = () => {
   const messageBanner = document.getElementById('messageBanner');
   messageBanner.className = '';
