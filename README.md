@@ -1,6 +1,6 @@
 ﻿# The Shoppies
 
-###### _Developed by: _ **Jamie Shaw**
+###### Developed by: Jamie Shaw
 
 ##### This small application was developed to be a part of my application for **Shopify's Frontend Internship - Summer 2021**.
 
