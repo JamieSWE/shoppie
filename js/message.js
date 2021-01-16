@@ -14,7 +14,7 @@ export const nominationRemoved = () => {
   setTimeout(() => {
     messageBanner.className = '';
     messageBanner.innerHTML = '';
-  }, 3500);
+  }, 2000);
 };
 
 //handle errors thrown by the API based on user input

@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Roboto:wght@300;500&display=swap');
 :root {
   --heading-font: 'Itim', cursive;
-  --primary-background: #1fece7;
-  --secondary-background: #52489c;
+  /* --primary-background: #1fece7;
+  --secondary-background: #52489c; */
 
   --primary-color: #f1962e;
   --secondary-color: #5e8497;
@@ -125,7 +125,8 @@ body {
   height: 100%;
   /* padding: 0 20px; */
   border: none;
-  border-bottom: 2px solid black;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   font-size: 20px;
   padding-right: 67px;
   padding-left: 15px;
@@ -290,10 +291,10 @@ ul::-webkit-scrollbar {
   width: 0.25rem;
 }
 ul::-webkit-scrollbar-track {
-  background: red;
+  background: var(--secondary-color);
 }
 ul::-webkit-scrollbar-thumb {
-  background: orange;
+  background: var(--primary-color);
 }
 .nominationRow {
   width: 95%;
