@@ -363,6 +363,9 @@ ul::-webkit-scrollbar-thumb {
   height: 110px;
   border-radius: 8px;
 }
+.card p {
+  padding: 0 2px;
+}
 
 .createCard {
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -429,8 +432,15 @@ ul::-webkit-scrollbar-thumb {
   .header p {
     font-size: 1.2em;
   }
+  #messageBanner {
+    width: 90%;
+  }
   .searchArea {
     width: 40%;
+  }
+  .searchArea input {
+    font-size: 17px;
+    line-height: 1.1em;
   }
 
   .nominationWrapper h2 {
@@ -447,11 +457,43 @@ ul::-webkit-scrollbar-thumb {
     width: 90%;
   }
   .card {
-    width: 25%;
+    width: 30%;
   }
   .card button {
     height: 35px;
   }
 }
 @media (max-width: 480px) {
+  .logo {
+    font-size: 2.5em;
+  }
+
+  .header p {
+    font-size: 0.85em;
+  }
+  #messageBanner {
+    font-size: 0.65em;
+  }
+  .searchArea {
+    width: 55%;
+  }
+  .searchArea input {
+    font-size: 15px;
+  }
+
+  .nominationWrapper h2 {
+    font-size: 1.5em;
+  }
+  .resultsWrapper {
+    width: 55%;
+  }
+  ul {
+    width: 55%;
+  }
+  .nominationRow {
+    width: 95%;
+  }
+  .card {
+    width: 40%;
+  }
 }
