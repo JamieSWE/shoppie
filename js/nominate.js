@@ -69,10 +69,10 @@ export const numOfNominations = () => {
 export const isNominated = (movieTitle) => {
   let isNominated = false;
   let data = JSON.parse(localStorage.getItem('movies'));
-  let nominatedMovies = data.filter((movie) => {
-    return movie.Title !== '';
-  });
-  if (nominatedMovies.length !== 0) {
+  if (localStorage.length !== 0) {
+    let nominatedMovies = data.filter((movie) => {
+      return movie.Title !== '';
+    });
     for (let i = 0; i < nominatedMovies.length; i++) {
       if (nominatedMovies[i].Title === movieTitle) {
         isNominated = true;
@@ -80,5 +80,14 @@ export const isNominated = (movieTitle) => {
       }
     }
   }
+
+  // if (nominatedMovies.length !== 0) {
+  //   for (let i = 0; i < nominatedMovies.length; i++) {
+  //     if (nominatedMovies[i].Title === movieTitle) {
+  //       isNominated = true;
+  //       break;
+  //     }
+  //   }
+  // }
   return isNominated;
 };

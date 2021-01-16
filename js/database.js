@@ -7,10 +7,12 @@ export const removeMovie = (movieTitle) => {
     return movie.Title !== movieTitle;
   });
   let count = JSON.parse(localStorage.getItem('count'));
-  count--;
+  --count;
   localStorage.clear();
   localStorage.setItem('movies', JSON.stringify(newData));
   localStorage.setItem('count', JSON.stringify(count));
+  console.log('decrement');
+  console.log('count: ' + count);
 };
 
 export const addMovie = (title, year, poster) => {
@@ -29,10 +31,12 @@ export const addMovie = (title, year, poster) => {
     });
 
     newData.push(movie);
-    count++;
+    ++count;
     localStorage.clear();
     localStorage.setItem('movies', JSON.stringify(newData));
     localStorage.setItem('count', JSON.stringify(count));
+    console.log('increment');
+    console.log('count: ' + count);
   }
 
   // if (localStorage.length === 0) {

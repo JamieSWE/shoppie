@@ -12,6 +12,7 @@ export const submitSearch = async () => {
     // if (!data.response) errorHandling(data);
     // else
   } catch (error) {
+    console.error(error);
     networkError();
   }
 };
