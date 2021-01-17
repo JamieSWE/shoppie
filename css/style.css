@@ -34,6 +34,14 @@ body {
 
   color: var(--primary-color);
 }
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .logo {
   font-family: var(--heading-font);
   letter-spacing: -3px;
